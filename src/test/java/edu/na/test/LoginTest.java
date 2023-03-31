@@ -16,9 +16,10 @@ public class LoginTest {
 
     @BeforeMethod
     public void setUpMethod() {
-        driver = WebDriverFactory.getDriver("chrome");
+        driver = WebDriverFactory.getDriver(ConfigurationReader.get("browser"));
         driver.manage().window().maximize();
         driver.get(ConfigurationReader.get("url"));
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
     @AfterMethod
