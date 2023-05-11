@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class PrintDueNextAssigments {
+public class PrintDueNextAssignments {
     WebDriver driver;
 
     @BeforeMethod
@@ -32,7 +32,7 @@ public class PrintDueNextAssigments {
     }
 
     @Test
-    public void PrintDueNextAssigments() throws InterruptedException {
+    public void PrintDueNextAssignments() throws InterruptedException {
         driver.findElement(By.id("myCourses-label")).click();
         driver.findElement(By.linkText("COMP 5393 1 - Capstone Project")).click();
         driver.findElement(By.linkText("Coursework")).click();

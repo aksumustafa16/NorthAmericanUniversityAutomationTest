@@ -4,16 +4,13 @@ import edu.na.utilities.ConfigurationReader;
 import edu.na.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class FindStudentsInRoster {
-
+public class CheckNewsAndAnnouncements {
     WebDriver driver;
 
     @BeforeMethod
@@ -35,16 +32,10 @@ public class FindStudentsInRoster {
     }
 
     @Test
-    public void FindStudentsInRoster() throws InterruptedException {
+    public void ViewAssignmentFromCalender() throws InterruptedException {
         driver.findElement(By.id("myCourses-label")).click();
         driver.findElement(By.linkText("COMP 5393 1 - Capstone Project")).click();
-        driver.findElement(By.linkText("Roster")).click();
+        driver.findElement(By.linkText("News and Announcements")).click();
         Thread.sleep(2000);
-        driver.findElement(By.id("SearchInput0")).sendKeys("Aksu");
-        String ExpectedName = "Aksu, Mustafa";
-        String ActualName = driver.findElement(By.id("pg0_V_RosterTableResults_ctl01_UserFullNameLabel")).getText();
-        Assert.assertEquals(ActualName,ExpectedName,"Verify that actual name is same with expected name");
-
     }
-
 }
