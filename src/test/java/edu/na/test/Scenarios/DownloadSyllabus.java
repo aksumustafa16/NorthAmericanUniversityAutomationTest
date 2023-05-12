@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class StartingChat {
+public class DownloadSyllabus {
     WebDriver driver;
 
     @BeforeMethod
@@ -28,17 +28,16 @@ public class StartingChat {
     @AfterMethod
     public void afterMethod() throws InterruptedException {
         Thread.sleep(2000);
-        driver.quit();
+        //driver.quit();
     }
 
     @Test
-    public void ViewAssignmentFromCalender() throws InterruptedException {
+    public void DownloadSyllabus() throws InterruptedException {
         driver.findElement(By.id("myCourses-label")).click();
         driver.findElement(By.linkText("COMP 5393 1 - Capstone Project")).click();
-        driver.findElement(By.linkText("Chat")).click();
+        driver.findElement(By.linkText("Syllabus")).click();
         Thread.sleep(2000);
-        driver.switchTo().frame("b7dea712-4d78-4dff-8045-4d2c5cd2ff38inputMessage_ifr");
-        driver.findElement(By.id("tinymce")).sendKeys("Whit this chat box I will start the chat right now.");
+        driver.findElement(By.id("pg1_V_CardLayoutControl_cardSetsRepeater_ctl00_cardsInSetRepeater_ctl00_titleLink")).click();
 
     }
 }
